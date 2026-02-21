@@ -1,0 +1,15 @@
+body.android .card {
+  width: 45px;
+  height: 45px;
+  font-size: 1em;
+}
+body.android #smgContiner {
+  width: 559px;
+  height: 70px;
+  flex-direction: row;
+  padding-top: 0;
+}
+body.android .game-board {
+  grid-gap: 2px;
+  top: 3vw;
+}

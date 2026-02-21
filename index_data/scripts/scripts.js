@@ -304,3 +304,8 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('orientationchange', checkOrientation);
   window.addEventListener('resize', checkOrientation);
 });
+function deviceTypeElementsRegistration() {
+  if (navigator.userAgent.match(/Android/i)) {
+    document.body.classList.add("android");
+  }
+}
