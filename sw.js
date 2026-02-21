@@ -1,7 +1,6 @@
 var GHPATH = '/mnts.memorycards.org';
 var APP_PREFIX = 'gppwa_';
-let VERSIONNAME = "0.0.1-21022026";
-var VERSION = VERSIONNAME;
+let VERSIONNAME = "0.0.2-21022026";
 var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index_data`,
@@ -200,7 +199,7 @@ var URLS = [
   `${GHPATH}/index_data/styles/styles.css`
 ];
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(URLS)));
+  event.waitUntil(caches.open(VERSIONNAME).then(cache => cache.addAll(URLS)));
 });
 self.addEventListener('fetch', event => {
   event.respondWith(caches.match(event.request).then(response => {
