@@ -1,23 +1,20 @@
-var GHPATH = '/mnts.grg.org';
+var GHPATH = '/mnts.memorycards.org';
 var APP_PREFIX = 'gppwa_';
-let VERSIONNAME = "0.0.0-grg";
+let VERSIONNAME = "0.0.1-21022026";
 var VERSION = VERSIONNAME;
 var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index_data`,
   `${GHPATH}/index.html`,
-  `${GHPATH}/manifest.webmanifest`
-
+  `${GHPATH}/manifest.webmanifest`,
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/languages.js`,
   `${GHPATH}/index_data/scripts/languages_texts.js`,
   `${GHPATH}/index_data/scripts/scripts.js`,
   `${GHPATH}/index_data/scripts/system.js`,
   `${GHPATH}/index_data/scripts/window_load.js`,
-
   `${GHPATH}/index_data/textures`,
   `${GHPATH}/index_data/textures/empty.png`,
-
   `${GHPATH}/index_data/textures/gui`,
   `${GHPATH}/index_data/textures/gui/bg_overlay.png`,
   `${GHPATH}/index_data/textures/gui/close.png`,
@@ -26,7 +23,6 @@ var URLS = [
   `${GHPATH}/index_data/textures/gui/smg_green.png`,
   `${GHPATH}/index_data/textures/gui/smg_red.png`,
   `${GHPATH}/index_data/textures/gui/windows_bg.png`,
-
   `${GHPATH}/index_data/textures/system`,
   `${GHPATH}/index_data/textures/system/battery_charging.png`,
   `${GHPATH}/index_data/textures/system/battery_low.png`,
@@ -50,14 +46,10 @@ var URLS = [
   `${GHPATH}/index_data/textures/system/icon_300.png`,
   `${GHPATH}/index_data/textures/system/icon_384.png`,
   `${GHPATH}/index_data/textures/system/icon_512.png`,
-
   `${GHPATH}/index_data/fonts`,
   `${GHPATH}/index_data/fonts/gintocopilot.woff2`,
-
   `${GHPATH}/index_data/animations`,
-
   `${GHPATH}/index_data/animations/cursour`,
-
   `${GHPATH}/index_data/animations/cursour/delault`,
   `${GHPATH}/index_data/animations/cursour/delault/0.png`,
   `${GHPATH}/index_data/animations/cursour/delault/1.png`,
@@ -75,7 +67,6 @@ var URLS = [
   `${GHPATH}/index_data/animations/cursour/delault/13.png`,
   `${GHPATH}/index_data/animations/cursour/delault/14.png`,
   `${GHPATH}/index_data/animations/cursour/delault/15.png`,
-
   `${GHPATH}/index_data/animations/cursour/clickable`,
   `${GHPATH}/index_data/animations/cursour/clickable/0.png`,
   `${GHPATH}/index_data/animations/cursour/clickable/1.png`,
@@ -93,7 +84,6 @@ var URLS = [
   `${GHPATH}/index_data/animations/cursour/clickable/13.png`,
   `${GHPATH}/index_data/animations/cursour/clickable/14.png`,
   `${GHPATH}/index_data/animations/cursour/clickable/15.png`,
-
   `${GHPATH}/index_data/animations/cursour/disabled`,
   `${GHPATH}/index_data/animations/cursour/disabled/0.png`,
   `${GHPATH}/index_data/animations/cursour/disabled/1.png`,
@@ -111,7 +101,6 @@ var URLS = [
   `${GHPATH}/index_data/animations/cursour/disabled/13.png`,
   `${GHPATH}/index_data/animations/cursour/disabled/14.png`,
   `${GHPATH}/index_data/animations/cursour/disabled/15.png`,
-
   `${GHPATH}/index_data/animations/cursour/matched`,
   `${GHPATH}/index_data/animations/cursour/matched/0.png`,
   `${GHPATH}/index_data/animations/cursour/matched/1.png`,
@@ -129,7 +118,6 @@ var URLS = [
   `${GHPATH}/index_data/animations/cursour/matched/13.png`,
   `${GHPATH}/index_data/animations/cursour/matched/14.png`,
   `${GHPATH}/index_data/animations/cursour/matched/15.png`,
-
   `${GHPATH}/index_data/textures/cards`,
   `${GHPATH}/index_data/textures/cards/front`,
   `${GHPATH}/index_data/textures/cards/front/mecha`,
@@ -169,7 +157,6 @@ var URLS = [
   `${GHPATH}/index_data/textures/cards/front/mecha/Trio of Enders.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Twilight.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Ventorus.png`,
-
   `${GHPATH}/index_data/textures/cards/front/pilot`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Aya.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Belladona.png`,
@@ -207,11 +194,10 @@ var URLS = [
   `${GHPATH}/index_data/textures/cards/front/pilot/Yulia.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Yutong.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Zoe.png`,
-
   `${GHPATH}/index_data/styles`,
   `${GHPATH}/index_data/styles/animations.css`,
   `${GHPATH}/index_data/styles/roots.css`,
-  `${GHPATH}/index_data/styles/styles.css`,
+  `${GHPATH}/index_data/styles/styles.css`
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(VERSION).then(cache => cache.addAll(URLS)));
