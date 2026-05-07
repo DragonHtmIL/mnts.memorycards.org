@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "gintocopilot", Arial;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: 0.4s;
+  -o-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+*:disabled {
+  opacity: 0.5;
+  cursor: url('../animations/cursour/disabled/0.png'), no-drop;
+  -webkit-animation: cursordsbld 0.4s infinite !important;
+  animation: cursordsbld 0.4s infinite !important;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+  background-image: var(--bg-overlay);
+  cursor: url('../animations/cursour/delault/0.png'), default;
+  -webkit-animation: cursordef 0.4s infinite;
+  animation: cursordef 0.4s infinite;
+}
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 99vmin;
+  height: 99vmin;
+}
+.card {
+  width: calc(100% / 9 - 2px);
+  height: calc(100% / 8 - 2px);
+  margin: 1px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: lighter;
+  position: relative;
+  transform-style: preserve-3d;
+  background-image: var(--cards-back-back);
+  background-position: center center;
+  background-size: cover;
+  border: solid 2px var(--black);
+  transition: transform 0.5s;
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+.card.flipped {
+  transform: rotateY(180deg);
+  background-image: var(--cards-back-back);
+  background-position: center center;
+  background-size: cover;
+  cursor: url('../animations/cursour/matched/0.png'), help;
+  -webkit-animation: cursormtchd 0.4s infinite;
+  animation: cursormtchd 0.4s infinite;
+}
+.card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.card .card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+.card .card-back {
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.card .card-back.default {
+  background-image: var(--default-card-bg);
+}
+.card .card-front {
+  background-color: var(--white);
+  color: var(--black);
+  transform: rotateY(180deg);
+}
+.card .card-front .cardImage {
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.card .card-front .cardText {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  color: var(--white);
+  background-position: top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: var(--black-a);
+}
+.card.matched .card-back,
+.card.matched .card-front {
+  background-color: var(--white);
+  cursor: default;
+  background-image: var(--cards-back-back);
+  background-position: center center;
+  background-size: cover;
+}
+.card.matched {
+  opacity: 0.6;
+  pointer-events: none;
+}
+#message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: var(--black);
+}
+.sub-device-inpo-indicator {
+  position: absolute;
+  left: 90px;
+  top: 0px;
+  width: 450px;
+  height: 36px;
+}
+#subBatteryProgress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: solid 2px var(--black);
+  border-right: solid 2px var(--black);
+  height: 6px;
+  background-color: var(--black-a);
+}
+#subInBatteryProgress {
+  position: relative;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: left center;
+}
+#subBatteryIndicator {
+  float: right;
+}
+#subBatteryCharge {
+  text-shadow: 0px 0px 5px var(--black-a);
+  float: left;
+  font-size: 25px;
+  margin-top: -3.5px;
+}
+#subBatteryLevel {
+  float: left;
+  padding: 0px;
+  margin-top: -2px;
+  font-size: 27px;
+}
+#subDateTimeIndicator {
+  float: left;
+}
+#subClock {
+  float: left;
+  font-size: 27px;
+  padding-left: 10px;
+  margin-top: -2px;
+}
+#subCalendar {
+  float: left;
+  font-size: 27px;
+  padding-right: 10px;
+  margin-top: -2px;
+}
+.sub-dc-symbol {
+  float: left;
+  font-size: 32px;
+  padding: 0px 10px;
+  margin-top: -5px;
+}
+.device-info-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  padding-left: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  z-index: 1;
+  backdrop-filter: blur(3px);
+  font-size: 1.8vw;
+}
+#clock {
+  border-right: solid 1px var(--black);
+  padding: 0 5px 0 4px;
+}
+#calendar {
+  border-left: solid 1px var(--black);
+  border-right: solid 1px var(--black);
+  padding: 0 5px;
+}
+#batteryIndicator {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-left: 5px;
+  border-left: solid 1px var(--black);
+}
+#batteryProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-right: solid 2px var(--black);
+  width: 6px;
+  background-color: var(--black-a);
+}
+#inBatteryProgress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-size: 100% 100%;
+  background-position: left center;
+}
+#dateTimeIndicator {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+#smgContiner {
+  position: absolute;
+  bottom: -134px;
+  width: 900px;
+  height: 134px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+  margin: auto;
+  background-image: var(--smg-bg-blue);
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#smgContiner.false {
+  background-image: var(--smg-bg-red) !important;
+  transform: scale(1,1);
+}
+#smgContiner.true {
+  background-image: var(--smg-bg-green) !important;
+  transform: scale(1,1);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: var(--black-a);
+  display: none;
+}
+.modal {
+  background-image: var(--windows-bg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+.modal .modal-content {
+  margin: auto;
+  padding: 10px;
+  word-wrap: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: 100% auto;
+  text-align: center;
+}
+.modal .modal-content {
+  width: 600px;
+  height: 313px;
+  overflow: hidden;
+  border-radius: 3px;
+  background-image: var(--modal);
+}
+.modal .modal-content .in-modal-content {
+  margin: 0;
+  width: 530px;
+  height: 255px;
+  overflow: hidden;
+  padding: 10px;
+  word-wrap: normal;
+  position: relative;
+  top: 36px;
+  left: 27px;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--black-b);
+}
+.modal .modal-content .close-button {
+  width: 60px;
+  height: 37px;
+  background-color: transparent;
+  background-image: var(--close-notice);
+  background-size: auto 100%;
+  background-position: 9.3px 0px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+#noticeTitleLang {
+  position: absolute;
+  top: 4px;
+  left: 38px;
+  text-align: center;
+  font-size: 22px;
+  color: var(--white);
+}
+#resetBoardButton {
+  margin-top: 10px;
+  width: 120px;
+  height: 40px;
+  background-color: transparent;
+  background-image: var(--close-notice);
+  background-size: auto 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+@font-face {
+  font-family: "gintocopilot";
+  src: url('../fonts/gintocopilot.woff2') format('woff2');
+}
+@media screen and (max-width: 800px) {
+  .sub-device-inpo-indicator {
+    left: 61px;
+    top: 0px;
+    width: 300px;
+    height: 24px;
+  }
+  #subBatteryProgress {
+    width: 100%;
+    height: 4px;
+  }
+  #subBatteryCharge {
+    margin-top: -2.5px;
+    font-size: 16px;
+  }
+  #subBatteryLevel {
+    padding: 0px;
+    font-size: 18px;
+  }
+  #subClock {
+    font-size: 18px;
+    padding-left: 6px;
+    margin-top: -1.5px;
+  }
+  #subCalendar {
+    font-size: 18px;
+    padding-right: 6px;
+    margin-top: -1.5px;
+  }
+  #smgContiner {
+    width: 100%;
+    height: 112px;
+  }
+  .modal .modal-content {
+    width: 378px;
+    height: 197px;
+  }
+  .modal .modal-content .in-modal-content {
+    width: 353px;
+    height: 170px;
+    top: 15px;
+    left: 2px;
+  }
+  .modal .modal-content .close-button {
+    width: 37px;
+    height: 23px;
+  }
+  #noticeTitleLang {
+    top: 2px;
+    left: 26px;
+    font-size: 14px;
+  }
+}

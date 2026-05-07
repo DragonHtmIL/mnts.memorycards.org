@@ -11,48 +11,18 @@
     <link rel="manifest" href="" id="manifestTestLoad">
     <link rel="stylesheet" href="index_data/styles/roots.css">
     <link rel="stylesheet" href="index_data/styles/styles.css">
+    <link rel="stylesheet" href="index_data/styles/styles_android.css">
     <link rel="stylesheet" href="index_data/styles/animations.css">
-    <script>
-      if(localStorage.getItem("lang") === "en") {
-        document.documentElement.setAttribute("lang", "en");
-      }else
-      if(localStorage.getItem("lang") === "ru") {
-        document.documentElement.setAttribute("lang", "ru");
-      }else
-      if(localStorage.getItem("lang") === "he") {
-        document.documentElement.setAttribute("lang", "he");
-      }
-    </script>
   </head>
   <body>
-    <div id="portraitOverlay">
-      <p id="rotateAlertText">...</p>
-    </div>
-    <div class="space-bar"></div>
-    <header class="header" id="header">
-      <div class="device-info-indicator">
-        <div id="batteryProgress">
-          <div id="inBatteryProgress"></div>
-        </div>
-        <div id="dateTimeIndicator">
-          <div id="clock">...</div>
-          <div id="calendar">...</div>
-        </div>
-        <div id="batteryIndicator">
-          <div id="batteryLevel"></div>
-          <div id="batteryCharge"></div>
-        </div>
-      </div>
-    </header>
     <div class="game-board" id="gameBoard"></div>
     <div class="smg-continer" id="smgContiner">
       <div id="message">...</div>
-      <button id="resetBoardButton">...</button>
     </div>
     <div id="winModal" class="modal" style="display: none;">
       <div class="modal-content">
       <div id="noticeTitleLang">...</div>
-        <button class="close-button" id="close" onclick="document.getElementById('winModal').style.display = 'none';"></button>
+        <button class="close-button" id="close"></button>
         <div class="in-modal-content" id="progressingALost">
           <div class="gettedscore" id="winScore">...</div>
         </div>
@@ -60,6 +30,7 @@
     </div>
     <!-- Scripts -->
     <script src="index_data/scripts/system.js"></script>
+    <script src="index_data/scripts/foods.js"></script>
     <script src="index_data/scripts/scripts.js"></script>
     <script src="index_data/scripts/languages_texts.js"></script>
     <script src="index_data/scripts/window_load.js"></script>

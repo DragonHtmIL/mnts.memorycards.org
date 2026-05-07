@@ -1,0 +1,23 @@
+:root {
+  --black: #000000ff;
+  --black-a: #000000aa;
+  --black-b: #00000011;
+  --white: #ffffffff;
+  --shadow: #3457dc33;
+  --filter-shadow: #b8c6dcff;
+  --gray: #7c8089ff;
+  --light-blue: aqua;
+  --battery-prog-normal: url('index_data/textures/system/battery_normal.png');
+  --battery-prog-low: url('index_data/textures/system/battery_low.png');
+  --battery-prog-charging: url('index_data/textures/system/battery_charging.png');
+  --close-notice: url('../textures/gui/close.png');
+  --bg-overlay: url('../textures/gui/bg_overlay.png');
+  --smg-bg-blue: url('../textures/gui/smg_blue.png');
+  --smg-bg-red: url('../textures/gui/smg_red.png');
+  --smg-bg-green: url('../textures/gui/smg_green.png');
+  --windows-bg: url('../textures/gui/windows_bg.png');
+  --modal: url('../textures/gui/notice.png');
+  --close-notice: url('../textures/gui/close.png');
+  --default-card-bg: url('../textures/cards/back/default.png');
+  --cards-back-back: url('../textures/cards/card_back.png');
+}
