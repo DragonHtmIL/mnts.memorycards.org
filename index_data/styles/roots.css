@@ -7,9 +7,6 @@
   --filter-shadow: #b8c6dcff;
   --gray: #7c8089ff;
   --light-blue: aqua;
-  --battery-prog-normal: url('index_data/textures/system/battery_normal.png');
-  --battery-prog-low: url('index_data/textures/system/battery_low.png');
-  --battery-prog-charging: url('index_data/textures/system/battery_charging.png');
   --close-notice: url('../textures/gui/close.png');
   --bg-overlay: url('../textures/gui/bg_overlay.png');
   --smg-bg-blue: url('../textures/gui/smg_blue.png');
