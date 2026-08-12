@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "gintocopilot", Arial;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transition: 0.6s;
+  -o-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -webkit-transition: 0.6s;
+}
+*:disabled {
+  opacity: 0.5;
+  cursor: url('../animations/cursour/disabled/0.png'), no-drop;
+  -webkit-animation: cursordsbld 0.4s infinite !important;
+  animation: cursordsbld 0.4s infinite !important;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  background-image: var(--bg-overlay);
+  cursor: url('../animations/cursour/delault/0.png'), default;
+  -webkit-animation: cursordef 0.4s infinite;
+  animation: cursordef 0.4s infinite;
+}
+button {
+  background-image: var(--button);
+  background-size: 100% auto;
+  background-color: transparent;
+  border: none;
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background-image: var(--header);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+header button {
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  background-position: center;
+  float: right;
+}
+#resetAreaButton {
+  background-image: var(--reset-area);
+}
+.game-area {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 10px;
+}
+.card {
+  width: calc(100% / 18 - 2px);
+  height: calc(100% / 4 - 2px);
+  margin: 1px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  position: relative;
+  transform-style: preserve-3d;
+  background-image: var(--cards-back-back);
+  background-position: center center;
+  background-size: cover;
+  border: solid 2px var(--black);
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card.flipped {
+  transform: rotateY(180deg) scale(1.1);
+  background-image: var(--cards-back-back);
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+  cursor: url('../animations/cursour/matched/0.png'), help;
+  -webkit-animation: cursormtchd 0.4s infinite;
+  animation: cursormtchd 0.4s infinite;
+}
+.card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.card .card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+.card .card-back {
+  background-size: 100% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.card .card-back.default {
+  background-image: var(--default-card-bg);
+}
+.card .card-front {
+  background-color: var(--white);
+  color: var(--black);
+  transform: rotateY(180deg);
+  display: flex;
+}
+.card .card-front .cardImage {
+  width: 100%;
+  height: 100%;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.card .card-front .cardText {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--black-a);
+  font-size: 12px;
+}
+.card.matched .card-back,
+.card.matched .card-front {
+  background-color: var(--white);
+  cursor: default;
+  background-image: var(--cards-back-back);
+  background-position: center center;
+  background-size: cover;
+}
+.card.matched {
+  opacity: 0.6;
+  pointer-events: none;
+  transform: rotateY(0deg) scale(1);
+  border: solid 2px var(--green);
+}
+.card.notmatched {
+  pointer-events: none;
+  border: solid 2px var(--red);
+  transform: rotateY(180deg) scale(1);
+}
+.smg-continer {
+  position: absolute;
+  top: 0;
+  width: auto;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-image: var(--smg-bg-blue);
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.smg-continer.false {
+  background-image: var(--smg-bg-red) !important;
+}
+.smg-continer.true {
+  background-image: var(--smg-bg-green) !important;
+}
+#message {
+  padding: 5px;
+  backdrop-filter: blur(5px);
+  font-size: 1.2em;
+  color: var(--white);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: var(--black-a);
+  display: none;
+}
+.modal {
+  background-image: var(--windows-bg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+.modal .modal-content {
+  margin: auto;
+  padding: 10px;
+  word-wrap: normal;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: 100% auto;
+  text-align: center;
+}
+.modal .modal-content {
+  width: 600px;
+  height: 313px;
+  overflow: hidden;
+  border-radius: 3px;
+  background-image: var(--modal);
+}
+.modal .modal-content .in-modal-content {
+  margin: 0;
+  width: 530px;
+  height: 255px;
+  overflow: hidden;
+  padding: 10px;
+  word-wrap: normal;
+  position: relative;
+  top: 36px;
+  left: 27px;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--black-b);
+}
+.modal .modal-content .close-button {
+  width: 60px;
+  height: 37px;
+  background-color: transparent;
+  background-image: var(--close-notice);
+  background-size: auto 100%;
+  background-position: 9.3px 0px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+#noticeTitleLang,
+#menuTitleLang {
+  position: absolute;
+  top: 4px;
+  left: 38px;
+  text-align: center;
+  font-size: 22px;
+  color: var(--white);
+}
+.side-panel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  height: 100%;
+  top: 0;
+  left: 0%;
+  color: var(--white);
+  background-image: var(--side-panel-bg);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.side-panel.hiddened {
+  margin-left: -10%;
+}
+.click-effect {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  background-image: none;
+  background-size: 100% 100%;
+  -webkit-animation: clckeffect0 0.6s;
+  animation: clckeffect0 0.6s;
+  z-index: 999;
+}
+#spOpener {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  padding: 5px;
+  margin: 0;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+  background-image: var(--sp-opner-op), var(--sp-opner-bg);
+  background-size: 80% 80%, 100% 100%;
+  background-position: center;
+  cursor: url('../animations/cursour/clickable/0.png'), pointer;
+  -webkit-animation: cursorlnk 0.4s infinite;
+  animation: cursorlnk 0.4s infinite;
+}
+#spOpener:hover {
+  background-image: var(--sp-opner-op), var(--sp-opner-bg-h);
+}
+#spOpener.sp-opened {
+  left: 10%;
+  background-image: var(--sp-opner-cs), var(--sp-opner-bg);
+}
+#spOpener.sp-opened:hover {
+  background-image: var(--sp-opner-cs), var(--sp-opner-bg-h);
+}
+.pairs-container {
+  overflow: auto;
+  flex: 1;
+}
+.panel-lower {
+  flex-shrink: 0;
+}
+.panel-lower button {
+  border: none;
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+  background-image: var(--button);
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+}
+@font-face {
+  font-family: "gintocopilot";
+  src: url('../fonts/gintocopilot.woff2') format('woff2');
+  font-display: swap;
+}

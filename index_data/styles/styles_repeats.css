@@ -1,0 +1,12 @@
+.pair-set {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top: solid 2px var(--gray);
+  border-bottom: solid 2px var(--gray);
+}
+.pair-set img {
+  width: 50%;
+  border: solid 1px var(--black);
+}
