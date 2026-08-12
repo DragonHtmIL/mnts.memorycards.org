@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.memorycards.org';
 var APP_PREFIX = 'gppwa_';
-let VERSIONNAME = "0.0.5-12082026";
+let VERSIONNAME = "0.0.6-12082026";
 var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index_data`,
@@ -169,7 +169,7 @@ var URLS = [
   `${GHPATH}/index_data/textures/cards/front/mecha/Hurricane.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Jojo.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Lancelot.png`,
-  `${GHPATH}/index_data/textures/cards/front/mecha/Mechael.png`,
+  `${GHPATH}/index_data/textures/cards/front/mecha/Michael.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Nebula.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Neutron Star.png`,
   `${GHPATH}/index_data/textures/cards/front/mecha/Northern Knight.png`,
@@ -204,7 +204,7 @@ var URLS = [
   `${GHPATH}/index_data/textures/cards/front/pilot/Mia.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Mila.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Mobius.png`,
-  `${GHPATH}/index_data/textures/cards/front/pilot/Nighthalk.png`,
+  `${GHPATH}/index_data/textures/cards/front/pilot/Nighthawk.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Ning.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Norma.png`,
   `${GHPATH}/index_data/textures/cards/front/pilot/Opal.png`,
