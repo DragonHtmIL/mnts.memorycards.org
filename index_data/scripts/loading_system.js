@@ -89,7 +89,7 @@ const images = {
     "Norma",
     "Opal",
     "Purity",
-    "RED",
+    "Red",
     "Rom",
     "Serena",
     "Shin",
