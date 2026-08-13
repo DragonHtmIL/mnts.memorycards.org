@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.memorycards.org';
 var APP_PREFIX = 'gppwa_';
-let VERSIONNAME = "0.0.6-12082026";
+let VERSIONNAME = "0.0.7-13082026";
 var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index_data`,
