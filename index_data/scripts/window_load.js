@@ -9,5 +9,4 @@ window.addEventListener('load', function() {
   };
   setLanguage();
   iconAllLoad();
-  initializeGame();
 });
