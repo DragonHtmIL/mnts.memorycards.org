@@ -168,5 +168,6 @@ function handleError() {
 };
 function toDisplayNone() {
   initializeGame();
+  autoRegistrations();
   document.getElementById("loading").style.display = "none";
 };
