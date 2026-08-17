@@ -58,6 +58,8 @@ header {
   position: absolute;
   top: 0;
   right: 0;
+  padding-top: max(0px, env(safe-area-inset-top));
+  height: calc(50px + max(0px, env(safe-area-inset-top)));
 }
 header button {
   width: 50px;
@@ -70,7 +72,7 @@ header button {
   background-image: var(--reset-area);
 }
 .game-area {
-  height: calc(100% - 50px);
+  height: calc(100% - 50px - max(0px, env(safe-area-inset-top)));
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
