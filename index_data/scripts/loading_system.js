@@ -167,5 +167,6 @@ function handleError() {
   el.innerHTML = messages[lang] || messages.en;
 };
 function toDisplayNone() {
+  initializeGame();
   document.getElementById("loading").style.display = "none";
 };
