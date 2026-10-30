@@ -249,16 +249,10 @@ header button {
   background-image: var(--modal);
 }
 .modal .modal-content .in-modal-content {
-  margin: 0;
-  width: 530px;
   height: 255px;
-  overflow: hidden;
   padding: 10px;
-  word-wrap: normal;
   position: relative;
   top: 36px;
-  left: 27px;
-  color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -286,9 +280,9 @@ header button {
   position: absolute;
   top: 4px;
   left: 38px;
-  text-align: center;
   font-size: 22px;
   color: var(--white);
+  width: calc(100% - 160px);
 }
 .side-panel {
   position: fixed;
@@ -351,6 +345,21 @@ header button {
 .pairs-container {
   overflow: auto;
   flex: 1;
+  direction: ltr;
+}
+.pairs-container::-webkit-scrollbar {
+  background-image: var(--scrl);
+  background-size: cover;
+  background-position: center;
+  width: 20px;
+  display: block;
+}
+.pairs-container::-webkit-scrollbar-thumb {
+  background-image: var(--scrl-thmb);
+  background-size: 100% 100%;
+  background-position: center;
+  width: 20px;
+  display: block;
 }
 .panel-lower {
   flex-shrink: 0;
@@ -364,6 +373,29 @@ header button {
   background-size: cover;
   background-position: center;
   color: var(--white);
+}
+.setting-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black-b);
+}
+.setting-container select {
+  background-color: transparent;
+  background-image: var(--select);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  appearance: none;
+  text-align: center;
+}
+#applySettingsBtn {
+  width: calc(100% - 20px);
+  position: absolute;
+  bottom: 10px;
+  z-index: 1;
 }
 @font-face {
   font-family: "gintocopilot";

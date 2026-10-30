@@ -1,12 +1,28 @@
-.pair-set {
+#pairsCardsList {
   width: 100%;
-  height: auto;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-top: solid 2px var(--gray);
-  border-bottom: solid 2px var(--gray);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2px;
+  row-gap: 0px;
+  border-top: solid 2px var(--border);
+  border-bottom: solid 2px var(--border);
 }
-.pair-set img {
-  width: 50%;
-  border: solid 1px var(--black);
+.pair-card-container {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-top: solid 2px var(--border);
+  border-bottom: solid 2px var(--border);
+}
+.pair-card-container img {
+  width: 100%;
+}
+.pair-card-container span {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background-color: var(--black-a);
 }

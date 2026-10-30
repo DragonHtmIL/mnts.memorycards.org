@@ -9,6 +9,7 @@
   --shadow: #3457dc33;
   --gray: #7c8089ff;
   --filter-shadow: #b8c6dcff;
+  --border: #ddaaffff;
   --close-notice: url('../textures/gui/close.png');
   --bg-overlay: url('../textures/gui/bg_overlay.png');
   --smg-bg-blue: url('../textures/gui/smg_blue.png');
@@ -27,4 +28,7 @@
   --header: url('../textures/gui/header.png');
   --reset-area: url('../textures/gui/reset.png');
   --button: url('../textures/gui/button.png');
+  --select: url('../textures/gui/select.png');
+  --scrl: url('../textures/gui/scrollbar.png');
+  --scrl-thmb: url('../textures/gui/scrollbar_thumb.png');
 }
