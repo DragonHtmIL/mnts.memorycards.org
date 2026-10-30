@@ -44,21 +44,18 @@
     </div>
     <button id="spOpener" onclick="openSidePanel();"></button>
     <div class="side-panel hiddened" id="sidePanel">
-      <div class="pairs-container">
-        <div id="pairs">...</div>
-        In code progress...
-      </div>
+      <div id="pairs">...</div>
+      <div class="pairs-container" id="pairsCardsList"></div>
       <div class="panel-lower">
         <button onclick="document.getElementById('menu').style.display='block';" id="menuSettings">...</button>
       </div>
     </div>
-    <div class="modal" id="menu">
+    <div class="modal" id="menu" style="display: none;">
       <div class="modal-content">
         <div id="menuTitleLang">...</div>
         <button class="close-button" onclick="document.getElementById('menu').style.display='none';"></button>
-        <div class="in-modal-content">
-          In code progress...
-        </div>
+        <div class="in-modal-content" id="settings"></div>
+        <button id="applySettingsBtn" style="display: none;" onclick="applySettings();">Apply</button>
       </div>
     </div>
     <header id="header">
@@ -78,19 +75,21 @@
       </div>
     </div>
     <!-- Scripts -->
-    <script src="index_data/scripts/lets.js"></script>
+    <script src="index_data/scripts/registrations.js"></script>
     <script src="index_data/scripts/system.js"></script>
     <script src="index_data/scripts/side_panel.js"></script>
     <script src="index_data/scripts/icons.js"></script>
-    <script src="index_data/scripts/registrations.js"></script>
     <script src="index_data/scripts/langs/language_en.js"></script>
     <script src="index_data/scripts/langs/language_ru.js"></script>
     <script src="index_data/scripts/langs/language_he.js"></script>
     <script src="index_data/scripts/languages_loader.js"></script>
     <script src="index_data/scripts/loading_system.js"></script>
+    <script src="index_data/scripts/settings.js"></script>
+    <script src="index_data/scripts/settings_check_and_apply.js"></script>
     <script src="index_data/scripts/window_click.js"></script>
     <script src="index_data/scripts/window_load.js"></script>
     <script src="index_data/scripts/sw_loader.js"></script>
+    <script src="index_data/scripts/keyboard.js"></script>
     <div id="scriptContainer"></div>
   </body>
 </html>

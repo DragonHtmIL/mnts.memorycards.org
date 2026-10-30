@@ -1,6 +1,6 @@
 var GHPATH = '/mnts.memorycards.org';
 var APP_PREFIX = 'gppwa_';
-let VERSIONNAME = "0.0.9-17082026";
+let VERSIONNAME = "0.1.0-30102026";
 var URLS = [
   `${GHPATH}/`,
   `${GHPATH}/index_data`,
@@ -8,10 +8,11 @@ var URLS = [
   `${GHPATH}/manifest.webmanifest`,
   `${GHPATH}/index_data/scripts`,
   `${GHPATH}/index_data/scripts/icons.js`,
+  `${GHPATH}/index_data/scripts/keyboard.js`,
   `${GHPATH}/index_data/scripts/languages_loader.js`,
-  `${GHPATH}/index_data/scripts/lets.js`,
   `${GHPATH}/index_data/scripts/loading_system.js`,
-  `${GHPATH}/index_data/scripts/registrations.js`,
+  `${GHPATH}/index_data/scripts/settings.js`,
+  `${GHPATH}/index_data/scripts/settings_check_and_apply.js`,
   `${GHPATH}/index_data/scripts/side_panel.js`,
   `${GHPATH}/index_data/scripts/sw_loader.js`,
   `${GHPATH}/index_data/scripts/system.js`,
@@ -31,6 +32,9 @@ var URLS = [
   `${GHPATH}/index_data/textures/gui/loading_progress.png`,
   `${GHPATH}/index_data/textures/gui/notice.png`,
   `${GHPATH}/index_data/textures/gui/reset.png`,
+  `${GHPATH}/index_data/textures/gui/scrollbar.png`,
+  `${GHPATH}/index_data/textures/gui/scrollbar_thumb.png`,
+  `${GHPATH}/index_data/textures/gui/select.png`,
   `${GHPATH}/index_data/textures/gui/side_panel.png`,
   `${GHPATH}/index_data/textures/gui/smg_blue.png`,
   `${GHPATH}/index_data/textures/gui/smg_green.png`,
