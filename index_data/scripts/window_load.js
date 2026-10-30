@@ -9,4 +9,5 @@ window.addEventListener('load', function() {
   };
   setLanguage();
   iconAllLoad();
+  pairsCardsLoad();
 });

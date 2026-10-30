@@ -1,3 +1,5 @@
+let errored = false;
+const lang = localStorage.getItem("lang") || "en";
 function autoRegistrations() {
   const main = document.getElementById("gameArea");
   const screenWidth = screen.width;

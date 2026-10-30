@@ -3,7 +3,6 @@ const messageDisplay = document.getElementById('message');
 const resetAreaCloseButton = document.getElementById('close');
 const resetAreaButton = document.getElementById('resetAreaButton');
 const container = document.getElementById("smgContiner");
-const language = localStorage.getItem("lang") || "en";
 const pilotMechaPairs = [
   {id: 'aya',
    img1: 'index_data/textures/cards/front/pilot/Aya.png',
@@ -258,7 +257,7 @@ function initializeGame() {
         <div class="card-face card-back"></div>
         <div class="card-face card-front">
           <div class="cardImage" style="background-image:url('${cardData.image}');"></div>
-          <div class="cardText">${cardData.name[language]}</div>
+          <div class="cardText">${cardData.name[lang]}</div>
         </div>
       </div>
     `;
@@ -348,3 +347,29 @@ resetAreaButton.addEventListener('click', function(){
   document.getElementById('winModal').style.display = 'none';
   initializeGame();
 });
+// Load pairs list
+function pairsCardsLoad() {
+  const pairsLists = document.getElementById("pairsCardsList");
+  pilotMechaPairs.forEach(card => {
+    // Create PILOT element
+    const pilot = document.createElement('div');
+    pilot.className = 'pilot-card';
+    pilot.innerHTML = `
+      <div class="pair-card-container">
+        <img src="${card.img1}" alt="${card.pilot.en}">
+        <span>${card.pilot[lang]}</span>
+      </div>
+    `;
+    pairsLists.appendChild(pilot);
+    // Create MECHA element
+    const mecha = document.createElement('div');
+    mecha.className = 'mecha-card';
+    mecha.innerHTML = `
+      <div class="pair-card-container">
+        <img src="${card.img2}" alt="${card.mecha.en}">
+        <span>${card.mecha[lang]}</span>
+      </div>
+    `;
+    pairsLists.appendChild(mecha);
+  });
+}

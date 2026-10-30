@@ -4,5 +4,6 @@ const enTexts = [
   "Game Over",
   "Settings",
   "Settings",
-  "Pairs"
+  "Pairs",
+  "Apply"
 ];

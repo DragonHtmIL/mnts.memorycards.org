@@ -156,7 +156,6 @@ function handleLoad() {
 };
 function handleError() {
   errorscont++;
-  const lang = localStorage.getItem("lang");
   const el = document.getElementById("loadingText");
   if (!el) return;
   const messages = {
@@ -167,7 +166,7 @@ function handleError() {
   el.innerHTML = messages[lang] || messages.en;
 };
 function toDisplayNone() {
-  initializeGame();
   autoRegistrations();
+  initializeGame();
   document.getElementById("loading").style.display = "none";
 };

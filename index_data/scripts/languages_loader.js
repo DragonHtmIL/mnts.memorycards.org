@@ -3,21 +3,21 @@ const elements = [
   "noticeTitleLang",
   "menuSettings",
   "menuTitleLang",
-  "pairs"
+  "pairs",
+  "applySettingsBtn"
 ];
 function setLanguage() {
-  const lang = localStorage.getItem("lang");
   let texts;
-  let direction;
+  let direct;
   if (lang === "en" || lang === null) {
     texts = enTexts;
-    direction = "ltr";
+    direct = "ltr";
   } else if (lang === "ru") {
     texts = ruTexts;
-    direction = "ltr";
+    direct = "ltr";
   } else if (lang === "he") {
     texts = heTexts;
-    direction = "rtl";
+    direct = "rtl";
   } else {
     return;
   }
@@ -26,8 +26,16 @@ function setLanguage() {
     const element = document.getElementById(elements[i]);
     if (element) {
       element.innerHTML = texts[i + 1];
+      element.style.direction = direct;
+    }
+    if(lang === "he") {
+      if (document.getElementById(elements[3])) document.getElementById(elements[3]).style.textAlign = "right";
+      if (document.getElementById(elements[3])) document.getElementById(elements[1]).style.textAlign = "right";
+    }else{
+      if (document.getElementById(elements[3])) document.getElementById(elements[3]).style.textAlign = "left";
+      if (document.getElementById(elements[3])) document.getElementById(elements[1]).style.textAlign = "left";
     }
   }
-  document.documentElement.setAttribute("dir", direction);
+  document.documentElement.setAttribute("dir", direct);
   document.documentElement.setAttribute("lang", lang);
 }
